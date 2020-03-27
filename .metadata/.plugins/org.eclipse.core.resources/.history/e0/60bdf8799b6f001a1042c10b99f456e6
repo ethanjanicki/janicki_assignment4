@@ -1,0 +1,40 @@
+package janicki_problem1;
+
+import java.io.*;
+import java.util.Scanner;
+
+public class DuplicateRemover {
+	
+	public static void main(String[] args) {
+		remove("problem1.txt")
+		
+		
+	}
+	
+
+
+
+public static void remove(String dataFile) {
+	String uniqueWords;
+	PrintWriter out;
+	try {
+		out = new PrintWriter(dataFile);
+		out.write("test2");
+		out.close();
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		
+	}
+
+}
+
+
+public static void write(String outputFile) {
+	PrintWriter out = new PrintWriter(outputFile);
+	out.println("penis");
+	out.close();
+	
+}
+
+}

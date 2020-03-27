@@ -1,0 +1,64 @@
+package janicki_problem1;
+
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
+
+public class DuplicateRemover {
+	
+	public static void main(String[] args) {
+		remove("problem1.txt");
+		
+		
+	}
+	
+
+
+
+public static void remove(String dataFile) {
+	/* how it will find duplicates
+	 * for each string in the file store the string for comaprison and compares it to every string in the file
+	 * if it finds a duplicate, it will move up an index and store the next string for comparison
+	 * if it does not, it will rewite the string in that index and do its comparisons for that string
+	 * if it runs into the 2nd,3rd,etc. instance of that duplicat string, it will test to see if that string has already been stored in th array
+	 */
+	//instance variable of unique words
+	int i=0;
+	Set<String> uniqueWords = new HashSet<String>();
+
+	//handles file 
+	File file = new File(dataFile);
+	
+	try(Scanner scanner = new Scanner(file)) {
+			while(scanner.hasNext()) {
+				if(uniqueWords.add (scanner.next())) {
+					uniqueWords.add (scanner.next());
+				}
+				i++;
+			}
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	
+		System.out.println(uniqueWords);
+	
+}
+
+
+public static void write(String outputFile) {
+	PrintWriter out;
+	try {
+		out = new PrintWriter(dataFile);
+		out.write("test2");
+		out.close();
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		
+	}
+	
+}
+
+}
